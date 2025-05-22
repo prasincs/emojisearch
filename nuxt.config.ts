@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: [
-    "@nuxt/ui",
+    "@nuxthq/ui",
     "@vueuse/nuxt",
     "@nuxtjs/fontaine",
     "@nuxtjs/google-fonts",
