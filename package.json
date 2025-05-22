@@ -25,6 +25,8 @@
     "typescript": "^5.3.3"
   },
   "dependencies": {
-    "emoji.json": "^15.1.0"
+    "@nuxt/ui": "^3.1.2",
+    "emoji.json": "^15.1.0",
+    "openai": "^4.102.0"
   }
 }
