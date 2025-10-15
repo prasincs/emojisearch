@@ -1,0 +1,10 @@
+# Docker ignore file
+node_modules
+.nuxt
+.output
+.git
+*.log
+.env*
+!.env.example
+cache
+*.db

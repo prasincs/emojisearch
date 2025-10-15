@@ -5,7 +5,7 @@ import emojiList from "emoji.json/emoji-compact.json";
 
 // Bedrock client will use IAM role automatically when running on EC2
 const bedrock = new BedrockRuntimeClient({
-  region: process.env.AWS_REGION || process.env.AWS_DEFAULT_REGION || "us-east-1"
+  region: process.env.AWS_REGION || process.env.AWS_DEFAULT_REGION || "ap-northeast-1"
 });
 
 export const generateEmojis = async (prompt: string) => {

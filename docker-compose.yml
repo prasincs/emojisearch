@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  emojisearch:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: localhost/emojisearch:latest
+    container_name: emojisearch
+    restart: unless-stopped
+    network_mode: host
+    cap_add:
+      - NET_ADMIN
+      - SYS_ADMIN
+
+    environment:
+      # AWS Bedrock Configuration (uses EC2 IAM role via instance metadata)
+      - AWS_DEFAULT_REGION=ap-northeast-1
+      - AWS_EC2_METADATA_DISABLED=false
+      - AWS_CONTAINER_CREDENTIALS_RELATIVE_URI
+      - AWS_CONTAINER_CREDENTIALS_FULL_URI
+      - AWS_CONTAINER_AUTHORIZATION_TOKEN
+
+      # Upstash KV (optional - for rate limiting)
+      - KV_URL=${KV_URL:-}
+      - KV_REST_API_URL=${KV_REST_API_URL:-}
+      - KV_REST_API_TOKEN=${KV_REST_API_TOKEN:-}
+      - KV_REST_API_READ_ONLY_TOKEN=${KV_REST_API_READ_ONLY_TOKEN:-}
+
+      # Nuxt configuration
+      - NODE_ENV=production
+      - PORT=3000
+
+    healthcheck:
+      test: ["CMD", "node", "-e", "require('http').get('http://localhost:3000', (r) => {if (r.statusCode !== 200) throw new Error(r.statusCode)})"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
