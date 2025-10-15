@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useClipboard, useToggle, useTimeoutFn } from '@vueuse/core';
+
 const props = defineProps<{ emoji: string }>();
 
 const DELAY = 1500;

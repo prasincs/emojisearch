@@ -27,10 +27,22 @@ export default defineEventHandler(async (event) => {
   }
 
   // No cache, generate fresh
-  const emojis = await generateEmojis(prompt);
+  try {
+    const emojis = await generateEmojis(prompt);
 
-  // Cache for future use
-  cacheEmojis(prompt, emojis).catch(() => {});
+    // Cache for future use
+    cacheEmojis(prompt, emojis).catch(() => {});
 
-  return emojis;
+    return emojis;
+  } catch (error: any) {
+    // Handle Bedrock throttling gracefully
+    if (error.name === 'ThrottlingException' || error.message?.includes('Too many requests')) {
+      throw createError({
+        statusCode: 429,
+        statusMessage: "Rate limit exceeded. Please wait a moment and try again."
+      });
+    }
+    // Re-throw other errors
+    throw error;
+  }
 });
