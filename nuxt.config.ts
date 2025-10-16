@@ -5,7 +5,6 @@ export default defineNuxtConfig({
     "@vueuse/nuxt",
     "@nuxtjs/fontaine",
     "@nuxtjs/google-fonts",
-    "nuxt-vercel-analytics",
     "@vite-pwa/nuxt",
   ],
   runtimeConfig: {
@@ -26,6 +25,13 @@ export default defineNuxtConfig({
     esbuild: {
       options: {
         target: "esnext",
+      },
+    },
+    routeRules: {
+      "/**": {
+        headers: {
+          "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self';",
+        },
       },
     },
   },

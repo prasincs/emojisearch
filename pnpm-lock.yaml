@@ -28,12 +28,6 @@ devDependencies:
   '@upstash/ratelimit':
     specifier: 1.0.0
     version: 1.0.0
-  '@vercel/edge':
-    specifier: 1.1.1
-    version: 1.1.1
-  '@vercel/kv':
-    specifier: 1.0.1
-    version: 1.0.1
   '@vite-pwa/nuxt':
     specifier: 0.4.0
     version: 0.4.0(rollup@2.79.1)(vite@4.5.1)(workbox-build@7.0.0)(workbox-window@7.0.0)
@@ -45,10 +39,7 @@ devDependencies:
     version: 4.4.2
   nuxt:
     specifier: 3.8.2
-    version: 3.8.2(@vercel/kv@1.0.1)(rollup@2.79.1)(typescript@5.3.3)(vite@4.5.1)
-  nuxt-vercel-analytics:
-    specifier: 1.0.0
-    version: 1.0.0(rollup@2.79.1)
+    version: 3.8.2(rollup@2.79.1)(typescript@5.3.3)(vite@4.5.1)
   typescript:
     specifier: 5.3.3
     version: 5.3.3
@@ -2542,7 +2533,7 @@ packages:
       '@nuxt/kit': 3.9.3(rollup@2.79.1)
       '@nuxt/schema': 3.9.3(rollup@2.79.1)
       execa: 7.2.0
-      nuxt: 3.8.2(@vercel/kv@1.0.1)(rollup@2.79.1)(typescript@5.3.3)(vite@4.5.1)
+      nuxt: 3.8.2(rollup@2.79.1)(typescript@5.3.3)(vite@4.5.1)
       vite: 4.5.1
     transitivePeerDependencies:
       - rollup
@@ -2565,7 +2556,7 @@ packages:
       semver: 7.5.4
     dev: true
 
-  /@nuxt/devtools@1.0.6(@vercel/kv@1.0.1)(nuxt@3.8.2)(rollup@2.79.1)(vite@4.5.1):
+  /@nuxt/devtools@1.0.6(nuxt@3.8.2)(rollup@2.79.1)(vite@4.5.1):
     resolution: {integrity: sha512-3P914IHBvKl2aYSrwaCAU9E1ndVNnGJR0Jn0XKUFktsbjU5kGlwLGrtRKXAw4Yz1VNiSZPrapVrFOQWbXRGRvg==}
     hasBin: true
     peerDependencies:
@@ -2591,8 +2582,8 @@ packages:
       launch-editor: 2.6.1
       local-pkg: 0.5.0
       magicast: 0.3.2
-      nitropack: 2.8.1(@vercel/kv@1.0.1)
-      nuxt: 3.8.2(@vercel/kv@1.0.1)(rollup@2.79.1)(typescript@5.3.3)(vite@4.5.1)
+      nitropack: 2.8.1
+      nuxt: 3.8.2(rollup@2.79.1)(typescript@5.3.3)(vite@4.5.1)
       nypm: 0.3.3
       ofetch: 1.3.3
       ohash: 1.1.3
@@ -4072,33 +4063,10 @@ packages:
       '@upstash/core-analytics': 0.0.6
     dev: true
 
-  /@upstash/redis@1.25.1:
-    resolution: {integrity: sha512-ACj0GhJ4qrQyBshwFgPod6XufVEfKX2wcaihsEvSdLYnY+m+pa13kGt1RXm/yTHKf4TQi/Dy2A8z/y6WUEOmlg==}
-    dependencies:
-      crypto-js: 4.2.0
-    dev: true
-
   /@upstash/redis@1.25.2:
     resolution: {integrity: sha512-iI3jgvmDIbe4Px0PskB8lrn1NXz7ZQyGpW9Ehmonk6SEFqhqssqIB04VmlNh8zZUXwzy6G9DaIa5gIUM6B7DwA==}
     dependencies:
       crypto-js: 4.2.0
-    dev: true
-
-  /@vercel/analytics@1.1.1:
-    resolution: {integrity: sha512-+NqgNmSabg3IFfxYhrWCfB/H+RCUOCR5ExRudNG2+pcRehq628DJB5e1u1xqwpLtn4pAYii4D98w7kofORAGQA==}
-    dependencies:
-      server-only: 0.0.1
-    dev: true
-
-  /@vercel/edge@1.1.1:
-    resolution: {integrity: sha512-NtKiIbn9Cq6HWGy+qRudz28mz5nxfOJWls5Pnckjw1yCfSX8rhXdvY/il3Sy3Zd5n/sKCM2h7VSCCpJF/oaDrQ==}
-    dev: true
-
-  /@vercel/kv@1.0.1:
-    resolution: {integrity: sha512-uTKddsqVYS2GRAM/QMNNXCTuw9N742mLoGRXoNDcyECaxEXvIHG0dEY+ZnYISV4Vz534VwJO+64fd9XeSggSKw==}
-    engines: {node: '>=14.6'}
-    dependencies:
-      '@upstash/redis': 1.25.1
     dev: true
 
   /@vercel/nft@0.24.4:
@@ -4379,7 +4347,7 @@ packages:
       '@vueuse/core': 10.7.0(vue@3.3.12)
       '@vueuse/metadata': 10.7.0
       local-pkg: 0.5.0
-      nuxt: 3.8.2(@vercel/kv@1.0.1)(rollup@2.79.1)(typescript@5.3.3)(vite@4.5.1)
+      nuxt: 3.8.2(rollup@2.79.1)(typescript@5.3.3)(vite@4.5.1)
       vue-demi: 0.14.6(vue@3.3.12)
     transitivePeerDependencies:
       - '@vue/composition-api'
@@ -7421,7 +7389,7 @@ packages:
     engines: {node: '>= 0.6'}
     dev: true
 
-  /nitropack@2.8.1(@vercel/kv@1.0.1):
+  /nitropack@2.8.1:
     resolution: {integrity: sha512-pODv2kEEzZSDQR+1UMXbGyNgMedUDq/qUomtiAnQKQvLy52VGlecXO1xDfH3i0kP1yKEcKTnWsx1TAF5gHM7xQ==}
     engines: {node: ^16.11.0 || >=17.0.0}
     hasBin: true
@@ -7494,7 +7462,7 @@ packages:
       unctx: 2.3.1
       unenv: 1.8.0
       unimport: 3.7.1(rollup@4.9.1)
-      unstorage: 1.10.1(@vercel/kv@1.0.1)
+      unstorage: 1.10.1
     transitivePeerDependencies:
       - '@azure/app-configuration'
       - '@azure/cosmos'
@@ -7700,18 +7668,7 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /nuxt-vercel-analytics@1.0.0(rollup@2.79.1):
-    resolution: {integrity: sha512-ob1FpLypY2a6uqjM6SPDH/PZjtYslC6LVN4Pe9tark/TC009N/+65Q99a2NjDN+QQv2x9HA7NcWlJoGGznGn3w==}
-    dependencies:
-      '@nuxt/kit': 3.8.2(rollup@2.79.1)
-      '@vercel/analytics': 1.1.1
-      defu: 6.1.4
-    transitivePeerDependencies:
-      - rollup
-      - supports-color
-    dev: true
-
-  /nuxt@3.8.2(@vercel/kv@1.0.1)(rollup@2.79.1)(typescript@5.3.3)(vite@4.5.1):
+  /nuxt@3.8.2(rollup@2.79.1)(typescript@5.3.3)(vite@4.5.1):
     resolution: {integrity: sha512-HUAyifmqTs2zcQBGvcby3KNs2pBAk+l7ZbLjD1oCNqQQ+wBuZ1qgLC4Ebu++y4g3o3Y8WAWSvpafbKRLQZziPw==}
     engines: {node: ^14.18.0 || >=16.10.0}
     hasBin: true
@@ -7725,7 +7682,7 @@ packages:
         optional: true
     dependencies:
       '@nuxt/devalue': 2.0.2
-      '@nuxt/devtools': 1.0.6(@vercel/kv@1.0.1)(nuxt@3.8.2)(rollup@2.79.1)(vite@4.5.1)
+      '@nuxt/devtools': 1.0.6(nuxt@3.8.2)(rollup@2.79.1)(vite@4.5.1)
       '@nuxt/kit': 3.8.2(rollup@2.79.1)
       '@nuxt/schema': 3.8.2(rollup@2.79.1)
       '@nuxt/telemetry': 2.5.3(rollup@2.79.1)
@@ -7754,7 +7711,7 @@ packages:
       knitwork: 1.0.0
       magic-string: 0.30.5
       mlly: 1.5.0
-      nitropack: 2.8.1(@vercel/kv@1.0.1)
+      nitropack: 2.8.1
       nuxi: 3.10.0
       nypm: 0.3.3
       ofetch: 1.3.3
@@ -8960,10 +8917,6 @@ packages:
       - supports-color
     dev: true
 
-  /server-only@0.0.1:
-    resolution: {integrity: sha512-qepMx2JxAa5jjfzxG79yPPq+8BuFToHd1hm7kI+Z4zAq1ftQiP7HcxMhDDItrbtwVeLg/cY2JnKnrcFkmiswNA==}
-    dev: true
-
   /set-blocking@2.0.0:
     resolution: {integrity: sha512-KiKBS8AnWGEyLzofFfmvKwpdPzqiy16LvQfK3yv/fVH7Bj13/wl3JSR1J+rfgRE9q7xUJK4qvgS8raSOeLUehw==}
     dev: true
@@ -9833,7 +9786,7 @@ packages:
       webpack-virtual-modules: 0.6.1
     dev: true
 
-  /unstorage@1.10.1(@vercel/kv@1.0.1):
+  /unstorage@1.10.1:
     resolution: {integrity: sha512-rWQvLRfZNBpF+x8D3/gda5nUCQL2PgXy2jNG4U7/Rc9BGEv9+CAJd0YyGCROUBKs9v49Hg8huw3aih5Bf5TAVw==}
     peerDependencies:
       '@azure/app-configuration': ^1.4.1
@@ -9874,7 +9827,6 @@ packages:
       idb-keyval:
         optional: true
     dependencies:
-      '@vercel/kv': 1.0.1
       anymatch: 3.1.3
       chokidar: 3.5.3
       destr: 2.0.2
