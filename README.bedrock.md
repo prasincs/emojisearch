@@ -207,6 +207,40 @@ pnpm build
 pnpm preview
 ```
 
+## HTTPS Access (Optional)
+
+### Using Tailscale Serve
+
+If you're running on a Tailscale-connected machine and want HTTPS access (required for Clipboard API to work over the network):
+
+```bash
+# Get your Tailscale hostname
+tailscale status --json | jq -r '.Self.DNSName'
+# Example output: your-machine.your-tailnet.ts.net.
+
+# Enable HTTPS on your tailnet (secure, private access)
+sudo tailscale serve --bg --https 443 3000
+
+# Access via HTTPS
+https://your-machine.your-tailnet.ts.net/
+```
+
+**Benefits:**
+- ✅ Automatic HTTPS with valid certificates
+- ✅ Clipboard API works properly (requires secure context)
+- ✅ No certificate management needed
+- ✅ Accessible only within your Tailscale network
+
+**To disable:**
+```bash
+sudo tailscale serve --https=443 off
+```
+
+**For public access** (outside your tailnet):
+```bash
+sudo tailscale funnel --bg --https 443 on
+```
+
 ## Troubleshooting
 
 ### "You don't have access to the model"
@@ -234,6 +268,13 @@ Bedrock has default quotas. If you hit rate limits:
 1. Request quota increase in AWS Service Quotas
 2. Implement exponential backoff
 3. Enable Upstash KV caching
+
+### Clipboard not working
+
+The Clipboard API requires a secure context (HTTPS). If clipboard copy isn't working:
+1. **Local development**: Access via `http://localhost:3000` (always secure)
+2. **Network access**: Use Tailscale Serve for HTTPS (see HTTPS Access section above)
+3. **Alternative**: The app includes a fallback using `execCommand` for HTTP, but this may be blocked in some browsers
 
 ## Migration Guides
 
